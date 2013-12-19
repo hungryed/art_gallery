@@ -39,6 +39,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'valid_attribute'
   gem 'rails-erd'
+  gem 'erd'
 end
 
 # Use ActiveModel has_secure_password
