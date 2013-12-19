@@ -6,8 +6,7 @@ describe Artist do
   it { should validate_presence_of :birth_place }
   it { should have_many :artworks }
   it { should belong_to :style }
-  it { should validate_presence_of :style_id }
+  it { should validate_presence_of :style }
   it { should validate_numericality_of :style_id }
-
 
 end
