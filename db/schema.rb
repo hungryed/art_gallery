@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131220225625) do
+ActiveRecord::Schema.define(version: 20131220231208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20131220225625) do
 
   create_table "artworks", force: true do |t|
     t.integer  "artist_id"
-    t.integer  "cost",          default: 0
+    t.integer  "cost"
     t.boolean  "available",     default: true
     t.date     "date_of_sale"
     t.integer  "type_id"
