@@ -3,13 +3,11 @@ class Artwork < ActiveRecord::Base
     inverse_of: :artworks
   belongs_to :type,
     inverse_of: :artworks
-
   belongs_to :collection,
     inverse_of: :artworks
-
   has_one :customer,
     through: :purchase
-
+  has_one :purchase
 
   validates_presence_of :name
   validates_presence_of :artist

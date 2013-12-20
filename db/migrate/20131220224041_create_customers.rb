@@ -5,6 +5,8 @@ class CreateCustomers < ActiveRecord::Migration
       t.string :last_name, null: false
       t.integer :favorite_collection_id, null: false
       t.decimal :amount_spent, default: 0
+
+      t.timestamps
     end
   end
 end

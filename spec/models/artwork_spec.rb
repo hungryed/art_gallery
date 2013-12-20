@@ -4,6 +4,7 @@ describe Artwork do
   it { should belong_to :collection }
   it { should belong_to :type }
   it { should have_one(:customer).through(:purchase) }
+  it { should have_one :purchase }
   it { should validate_presence_of :artist }
   it { should validate_presence_of :type }
   it { should validate_presence_of :collection }
