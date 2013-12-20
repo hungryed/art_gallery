@@ -3,10 +3,13 @@ require 'spec_helper'
 describe Artwork do
   it { should belong_to :collection }
   it { should belong_to :type }
-  it { should belong_to :purchase }
+  it { should have_one(:customer).through(:purchase) }
   it { should validate_presence_of :artist }
   it { should validate_presence_of :type }
   it { should validate_presence_of :collection }
+
+  it { should have_valid(:customer).when(Customer.new) }
+  it { should have_valid(:purchase).when(Purchase.new) }
 
   let(:art) { Artwork.create }
   it "defaults to true for available" do
@@ -21,7 +24,4 @@ describe Artwork do
 
   it { should validate_numericality_of(:cost).is_greater_than_or_equal_to 0 }
   it { should respond_to(:collection) }
-  it "should respond to collection" do
-    expect(art.collection).to be_an_instance_of(Collection)
-  end
 end
