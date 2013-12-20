@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Artwork do
   it { should belong_to :collection }
   it { should belong_to :type }
+  it { should belong_to :purchase }
   it { should validate_presence_of :artist }
   it { should validate_presence_of :type }
   it { should validate_presence_of :collection }

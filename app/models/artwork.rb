@@ -5,6 +5,8 @@ class Artwork < ActiveRecord::Base
     inverse_of: :artworks
   belongs_to :collection,
     inverse_of: :artworks
+  belongs_to :purchase,
+    inverse_of: :artwork
   validates_presence_of :name
   validates_presence_of :artist
   validates_numericality_of :cost, greater_than_or_equal_to: 0, allow_nil: true
